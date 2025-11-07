@@ -1,0 +1,21 @@
+order_id,order_number,created_at,customer_name,email,phone,ship_name,ship_address1,ship_address2,ship_city,ship_state,ship_postal,ship_country,discount_codes,tags,financial_status,fulfillment_status,cancelled_at,currency,lineitem_sku,lineitem_title,lineitem_variant,lineitem_quantity,price
+2,MM-1002,2025-09-28 20:47:54,Customer 1,customer1@example.com,+1-909-302-1860,Customer 1,101 Oak St,,Upland,CA,91784,US,,,paid,fulfilled,,USD,TSHIRT-WHT-L,White Tee,Size:L;Color:White,1,29.0
+2,MM-1002,2025-09-28 20:47:54,Customer 1,customer1@example.com,+1-909-302-1860,Customer 1,101 Oak St,,Upland,CA,91784,US,,,paid,fulfilled,,USD,MUG-11OZ,Ceramic Mug 11oz,11oz;White,1,29.0
+3,MM-1003,2025-09-29 02:47:54,Customer 2,customer2@example.com,+1-909-969-7949,Customer 2,103 Cedar Blvd,Apt 203,Ontario,CA,91761,US,,gift,paid,fulfilled,,USD,HAT-TRUCKER,Trucker Hat,OSFA;Black/White,2,12.0
+3,MM-1003,2025-09-29 02:47:54,Customer 2,customer2@example.com,+1-909-969-7949,Customer 2,103 Cedar Blvd,Apt 203,Ontario,CA,91761,US,,gift,paid,fulfilled,,USD,TSHIRT-BLK-S,Black Tee,Size:S;Color:Black,1,19.99
+4,MM-1004,2025-09-29 08:47:54,Customer 3,customer3@example.com,+1-909-710-8849,Customer 3,105 Maple Ave,,Riverside,CA,92501,US,,,paid,fulfilled,,USD,TSHIRT-WHT-L,White Tee,Size:L;Color:White,2,24.99
+4,MM-1004,2025-09-29 08:47:54,Customer 3,customer3@example.com,+1-909-710-8849,Customer 3,105 Maple Ave,,Riverside,CA,92501,US,,,paid,fulfilled,,USD,TSHIRT-BLK-S,Black Tee,Size:S;Color:Black,1,29.0
+5,MM-1005,2025-09-29 14:47:54,Customer 4,customer4@example.com,+1-909-846-6393,Customer 4,107 Pine Rd,,Rancho Cucamonga,CA,91730,US,WELCOME10,,paid,fulfilled,,USD,HAT-TRUCKER,Trucker Hat,OSFA;Black/White,1,24.99
+5,MM-1005,2025-09-29 14:47:54,Customer 4,customer4@example.com,+1-909-846-6393,Customer 4,107 Pine Rd,,Rancho Cucamonga,CA,91730,US,WELCOME10,,paid,fulfilled,,USD,MUG-11OZ,Ceramic Mug 11oz,11oz;White,2,24.99
+6,MM-1006,2025-09-29 20:47:54,Customer 5,customer5@example.com,+1-909-708-1775,Customer 5,109 Sunset Dr,Apt 209,Fontana,CA,92335,US,,gift,paid,fulfilled,,USD,TSHIRT-BLK-M,Black Tee,Size:M;Color:Black,1,24.99
+6,MM-1006,2025-09-29 20:47:54,Customer 5,customer5@example.com,+1-909-708-1775,Customer 5,109 Sunset Dr,Apt 209,Fontana,CA,92335,US,,gift,paid,fulfilled,,USD,HAT-TRUCKER,Trucker Hat,OSFA;Black/White,1,15.0
+7,MM-1007,2025-09-30 02:47:54,Customer 6,customer6@example.com,+1-909-755-1161,Customer 6,111 Oak St,,Upland,CA,91784,US,WELCOME10,,paid,fulfilled,,USD,MUG-11OZ,Ceramic Mug 11oz,11oz;White,1,29.0
+7,MM-1007,2025-09-30 02:47:54,Customer 6,customer6@example.com,+1-909-755-1161,Customer 6,111 Oak St,,Upland,CA,91784,US,WELCOME10,,paid,fulfilled,,USD,HAT-TRUCKER,Trucker Hat,OSFA;Black/White,1,29.0
+8,MM-1008,2025-09-30 08:47:54,Customer 7,customer7@example.com,+1-909-991-5859,Customer 7,113 Cedar Blvd,,Ontario,CA,91761,US,,,paid,unfulfilled,,USD,TSHIRT-BLK-S,Black Tee,Size:S;Color:Black,1,12.0
+8,MM-1008,2025-09-30 08:47:54,Customer 7,customer7@example.com,+1-909-991-5859,Customer 7,113 Cedar Blvd,,Ontario,CA,91761,US,,,paid,unfulfilled,,USD,MUG-11OZ,Ceramic Mug 11oz,11oz;White,1,19.99
+9,MM-1009,2025-09-30 14:47:54,Customer 8,customer8@example.com,+1-909-792-1391,Customer 8,115 Maple Ave,Apt 215,Riverside,CA,92501,US,,,paid,fulfilled,,USD,TSHIRT-BLK-S,Black Tee,Size:S;Color:Black,2,12.0
+9,MM-1009,2025-09-30 14:47:54,Customer 8,customer8@example.com,+1-909-792-1391,Customer 8,115 Maple Ave,Apt 215,Riverside,CA,92501,US,,,paid,fulfilled,,USD,MUG-11OZ,Ceramic Mug 11oz,11oz;White,1,12.0
+10,MM-1010,2025-09-30 20:47:54,Customer 9,customer9@example.com,+1-909-247-3454,Customer 9,117 Pine Rd,,Rancho Cucamonga,CA,91730,US,,,paid,fulfilled,,USD,TSHIRT-WHT-L,White Tee,Size:L;Color:White,1,19.99
+10,MM-1010,2025-09-30 20:47:54,Customer 9,customer9@example.com,+1-909-247-3454,Customer 9,117 Pine Rd,,Rancho Cucamonga,CA,91730,US,,,paid,fulfilled,,USD,HAT-TRUCKER,Trucker Hat,OSFA;Black/White,1,12.0
+11,MM-1011,2025-10-01 02:47:54,Customer 10,customer10@example.com,+1-909-204-8385,Customer 10,119 Sunset Dr,,Fontana,CA,92335,US,,gift,paid,unfulfilled,,USD,TSHIRT-BLK-M,Black Tee,Size:M;Color:Black,1,24.99
+11,MM-1011,2025-10-01 02:47:54,Customer 10,customer10@example.com,+1-909-204-8385,Customer 10,119 Sunset Dr,,Fontana,CA,92335,US,,gift,paid,unfulfilled,,USD,HAT-TRUCKER,Trucker Hat,OSFA;Black/White,1,12.0
