@@ -2,7 +2,7 @@
 
 > “Every time I export orders I have to rename columns, delete fields, and format everything so the supplier can process it. It’s hours of repetitive cleanup each week.” — small biz owner on Reddit
 
-This repo is a direct response to that pain. Instead of fixing every spreadsheet by hand, you describe what your supplier wants in a simple YAML file, then run one script that does the filtering, renaming, and reformatting for you.
+This repo is a direct response to that pain. Instead of fixing every spreadsheet by hand, you describe what your supplier wants in a simple YAML file, then run one script that does the filtering, renaming, and reformatting for you. The full backstory and build notes live in [this blog post](https://moveminimally.com/every-week-small-business-owners-lose-hours-cleaning-up-spreadsheet-exports-renaming-columns-deleting-unnecessary-fields-and-reformatting-order-data-so-their-suppliers-can-actually-use/).
 
 ## Prerequisites
 
