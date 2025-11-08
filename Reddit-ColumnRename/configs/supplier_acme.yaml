@@ -1,0 +1,86 @@
+# supplier_acme.yaml
+# This file is a “fill in the blanks” instruction sheet for the script.
+# Each section tells the transformer how to trim columns, rename them, and build the final file.
+input_assumptions:
+  date_tz: "America/Los_Angeles"
+  item_row_granularity: "line_item"  # or "order"
+filters:
+  include_financial_status: ["paid"]
+  exclude_fulfillment_status: ["cancelled"]
+  min_quantity: 1
+mappings:
+  # --- COLUMN RENAME CHEAT SHEET ---
+  # Goal: match the exact column names used in the raw Shopify export (left side)
+  # with the generic labels the script understands (right side).
+  # To add a new column:
+  #   1. Look at the column header in the CSV. Example: "Lineitem Vendor".
+  #   2. Copy that header verbatim (case insensitive) to the left of the colon.
+  #   3. Decide what friendly internal name you want to use on the right.
+  #   4. Repeat the same friendly name later in `output.rename_final` if you
+  #      need a specific supplier-facing label (e.g., make it uppercase).
+  rename:
+    order_number: po_number
+    created_at: po_date
+    lineitem_sku: sku
+    lineitem_title: description
+    lineitem_quantity: qty
+    ship_name: ship_to_name
+    ship_address1: ship_to_address1
+    ship_address2: ship_to_address2
+    ship_city: ship_to_city
+    ship_state: ship_to_state
+    ship_postal: ship_to_postal
+    ship_country: ship_to_country
+  # computed fields let you build columns that do not exist in the source file.
+  # They can reference any renamed column above. Example: if you rename
+  # "lineitem_vendor" -> vendor_name, you can use vendor_name inside a formula here.
+  computed:
+    po_date: "to_date(po_date)"            # normalize to YYYY-MM-DD
+    requested_ship_date: "po_date_plus(po_date, days=0)" # same-day default
+    notes: "concat(tags, ' ', discount_codes)"
+output:
+  # This is the exact order the supplier wants to see the columns in the final sheet.
+  columns_order:
+    - PO_NUMBER
+    - PO_DATE
+    - SKU
+    - QTY
+    - DESCRIPTION
+    - REQUESTED_SHIP_DATE
+    - SHIP_TO_NAME
+    - SHIP_TO_ADDRESS1
+    - SHIP_TO_ADDRESS2
+    - SHIP_TO_CITY
+    - SHIP_TO_STATE
+    - SHIP_TO_POSTAL
+    - SHIP_TO_COUNTRY
+    - NOTES
+  # Final rename section translates the internal names (right side of `mappings.rename`)
+  # into the exact column headers the supplier expects. To add a column that you
+  # introduced above, just copy the internal name on the left and the desired output
+  # label on the right.
+  rename_final:
+    po_number: PO_NUMBER
+    po_date: PO_DATE
+    sku: SKU
+    qty: QTY
+    description: DESCRIPTION
+    requested_ship_date: REQUESTED_SHIP_DATE
+    ship_to_name: SHIP_TO_NAME
+    ship_to_address1: SHIP_TO_ADDRESS1
+    ship_to_address2: SHIP_TO_ADDRESS2
+    ship_to_city: SHIP_TO_CITY
+    ship_to_state: SHIP_TO_STATE
+    ship_to_postal: SHIP_TO_POSTAL
+    ship_to_country: SHIP_TO_COUNTRY
+    notes: NOTES
+validation:
+  required: ["PO_NUMBER","PO_DATE","SKU","QTY","SHIP_TO_NAME","SHIP_TO_ADDRESS1","SHIP_TO_CITY","SHIP_TO_POSTAL","SHIP_TO_COUNTRY"]
+  positive_int: ["QTY"]
+  nonempty: ["SKU"]
+delivery:
+  format: "csv"   # or "xlsx"
+  filename_pattern: "ACME_PO_{today}.csv"
+  send:
+    method: "email"   # or "sftp"
+    to: ["purchasing@acmefactory.com"]
